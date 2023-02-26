@@ -25,10 +25,9 @@ app.get("/", (req, res) => {
 
 const startServer = (req, res) => {
   try {
-    const r ='mongodb+srv://denis:denis@cluster0.c0mvcq3.mongodb.net/?retryWrites=true&w=majority';
     // console.log(process.env.MONGODB_URL)
     // console.log(r)
-    connectDB(r);
+    connectDB(process.env.MONGODB_URL);
 
     app.listen(3000, () => {
       console.log("server has started on http://localhost:3000");
